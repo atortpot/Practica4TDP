@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>EJERCICIO-4.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-4.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 4</span>
+
+<span class="s2">INICIO</span>
+
+<span class="s2">FUNCIÓN obtenerSolicitudUsuario</span><span class="s1">():</span>
+<span class="s2">IMPRIMIR </span><span class="s1">&quot;</span><span class="s2">Usuario</span><span class="s1">: </span><span class="s2">¿Cómo puedo ayudarte?</span><span class="s1">&quot;</span>
+<span class="s2">LEER solicitudUsuario</span>
+<span class="s2">RETORNAR solicitudUsuario</span>
+
+<span class="s2">FUNCIÓN procesarSolicitud</span><span class="s1">(</span><span class="s2">solicitud</span><span class="s1">):</span>
+<span class="s2">SI solicitud CONTIENE </span><span class="s1">&quot;</span><span class="s2">recordatorio</span><span class="s1">&quot;:</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">Recordatorio establecido para </span><span class="s1">&quot; </span><span class="s2">+ detalles del recordatorio</span>
+<span class="s2">SINO SI solicitud CONTIENE </span><span class="s1">&quot;</span><span class="s2">buscar</span><span class="s1">&quot;:</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">Resultados de búsqueda para </span><span class="s1">&quot; </span><span class="s2">+ términos de búsqueda</span>
+<span class="s2">SINO</span><span class="s1">:</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">No estoy seguro de cómo ayudar con eso. ¿Puedes ser más específico?</span><span class="s1">&quot;</span>
+
+<span class="s2">FUNCIÓN interactuarConUsuario</span><span class="s1">():</span>
+<span class="s2">solicitud = obtenerSolicitudUsuario</span><span class="s1">()</span>
+<span class="s2">respuesta = procesarSolicitud</span><span class="s1">(</span><span class="s2">solicitud</span><span class="s1">)</span>
+<span class="s2">IMPRIMIR </span><span class="s1">&quot;</span><span class="s2">Asistente</span><span class="s1">: &quot; </span><span class="s2">+ respuesta</span>
+
+<span class="s2">MIENTRAS VERDADERO</span><span class="s1">:</span>
+<span class="s2">interactuarConUsuario</span><span class="s1">()</span>
+
+<span class="s2">FIN</span>
+</pre>
+</body>
+</html>

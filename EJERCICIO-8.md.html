@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>EJERCICIO-8.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-8.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 8</span>
+
+<span class="s2">INICIO</span>
+
+<span class="s2">ESTRUCTURA Cita</span><span class="s1">:</span>
+<span class="s2">autor</span>
+<span class="s2">cita</span>
+<span class="s2">etiquetas // Lista de etiquetas relacionadas con el estado de ánimo o contexto</span>
+
+<span class="s2">BASE_DE_DATOS_CITAS = </span><span class="s1">[</span>
+<span class="s2">Cita</span><span class="s1">(&quot;</span><span class="s2">Autor 1</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">&quot;</span><span class="s2">Cita inspiradora 1</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">[&quot;</span><span class="s2">motivación</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">&quot;</span><span class="s2">superación</span><span class="s1">&quot;])</span><span class="s2">,</span>
+<span class="s2">Cita</span><span class="s1">(&quot;</span><span class="s2">Autor 2</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">&quot;</span><span class="s2">Cita inspiradora 2</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">[&quot;</span><span class="s2">reflexión</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">&quot;</span><span class="s2">calma</span><span class="s1">&quot;])</span><span class="s2">,</span>
+<span class="s2">Cita</span><span class="s1">(&quot;</span><span class="s2">Autor 3</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">&quot;</span><span class="s2">Cita inspiradora 3</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">[&quot;</span><span class="s2">felicidad</span><span class="s1">&quot;</span><span class="s2">, </span><span class="s1">&quot;</span><span class="s2">alegría</span><span class="s1">&quot;])</span><span class="s2">,</span>
+<span class="s2">// Agregar más citas según sea necesario</span>
+<span class="s1">]</span>
+
+<span class="s2">FUNCIÓN obtenerCitaAleatoria</span><span class="s1">(</span><span class="s2">etiquetas</span><span class="s1">):</span>
+<span class="s2">citasFiltradas = FILTRAR BASE_DE_DATOS_CITAS POR etiquetas</span>
+<span class="s2">SI LONGITUD DE citasFiltradas ES MAYOR QUE 0</span><span class="s1">:</span>
+<span class="s2">índiceAleatorio = NÚMERO ALEATORIO ENTRE 0 Y </span><span class="s1">(</span><span class="s2">LONGITUD DE citasFiltradas - 1</span><span class="s1">)</span>
+<span class="s2">RETORNAR citasFiltradas</span><span class="s1">[</span><span class="s2">índiceAleatorio</span><span class="s1">]</span>
+<span class="s2">SINO</span><span class="s1">:</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">Lo siento, no tengo una cita para ese estado de ánimo o contexto.</span><span class="s1">&quot;</span>
+
+<span class="s2">FUNCIÓN solicitarEstadoDeÁnimo</span><span class="s1">():</span>
+<span class="s2">IMPRIMIR </span><span class="s1">&quot;</span><span class="s2">¿Cómo te sientes hoy? </span><span class="s1">(</span><span class="s2">motivación, reflexión, felicidad, etc.</span><span class="s1">)&quot;</span>
+<span class="s2">LEER estadoDeÁnimo</span>
+<span class="s2">RETORNAR estadoDeÁnimo</span>
+
+<span class="s2">FUNCIÓN imprimirCita</span><span class="s1">(</span><span class="s2">cita</span><span class="s1">):</span>
+<span class="s2">SI cita ES UNA INSTANCIA DE Cita</span><span class="s1">:</span>
+<span class="s2">IMPRIMIR </span><span class="s1">&quot;</span><span class="s2">Cita Inspiradora</span><span class="s1">: &quot; </span><span class="s2">+ cita.cita + </span><span class="s1">&quot; </span><span class="s2">- </span><span class="s1">&quot; </span><span class="s2">+ cita.autor</span>
+<span class="s2">SINO</span><span class="s1">:</span>
+<span class="s2">IMPRIMIR cita // Mensaje de no disponibilidad</span>
+
+<span class="s2">FUNCIÓN esperarSolicitudNuevaCita</span><span class="s1">():</span>
+<span class="s2">IMPRIMIR </span><span class="s1">&quot;</span><span class="s2">¿Deseas otra cita? </span><span class="s1">(</span><span class="s2">sí/no</span><span class="s1">)&quot;</span>
+<span class="s2">LEER respuesta</span>
+<span class="s2">RETORNAR respuesta ES IGUAL A </span><span class="s1">&quot;</span><span class="s2">sí</span><span class="s1">&quot;</span>
+
+<span class="s2">FUNCIÓN generarCita</span><span class="s1">():</span>
+<span class="s2">estadoDeÁnimo = solicitarEstadoDeÁnimo</span><span class="s1">()</span>
+<span class="s2">etiquetas = </span><span class="s1">[</span><span class="s2">estadoDeÁnimo</span><span class="s1">] </span><span class="s2">// Se puede expandir para aceptar múltiples etiquetas</span>
+<span class="s2">cita = obtenerCitaAleatoria</span><span class="s1">(</span><span class="s2">etiquetas</span><span class="s1">)</span>
+<span class="s2">imprimirCita</span><span class="s1">(</span><span class="s2">cita</span><span class="s1">)</span>
+
+<span class="s2">MIENTRAS VERDADERO</span><span class="s1">:</span>
+<span class="s2">generarCita</span><span class="s1">()</span>
+<span class="s2">si NO esperarSolicitudNuevaCita</span><span class="s1">():</span>
+<span class="s2">SALIR</span>
+
+<span class="s2">FIN</span></pre>
+</body>
+</html>

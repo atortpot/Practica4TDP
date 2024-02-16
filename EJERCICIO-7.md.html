@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>EJERCICIO-7.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-7.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 7</span>
+
+<span class="s2">función obtenerCitaAleatoria</span><span class="s1">():</span>
+<span class="s2">índiceAleatorio = generarNúmeroAleatorio</span><span class="s1">(</span><span class="s2">0, longitud</span><span class="s1">(</span><span class="s2">baseDeDatosCitas</span><span class="s1">) </span><span class="s2">- 1</span><span class="s1">)</span>
+<span class="s2">cita = baseDeDatosCitas</span><span class="s1">[</span><span class="s2">índiceAleatorio</span><span class="s1">]</span>
+<span class="s2">retornar cita</span>
+
+<span class="s2">función esperarSolicitudNuevaCita</span><span class="s1">():</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Presiona cualquier tecla para generar una nueva cita, o escribe </span><span class="s1">'</span><span class="s2">salir' para terminar.</span><span class="s1">&quot;)</span>
+<span class="s2">entradaUsuario = leerEntradaUsuario</span><span class="s1">()</span>
+<span class="s2">si entradaUsuario == </span><span class="s1">&quot;</span><span class="s2">salir</span><span class="s1">&quot;:</span>
+<span class="s2">retornar falso</span>
+<span class="s2">retornar verdadero</span>
+
+<span class="s2">función generarCita</span><span class="s1">():</span>
+<span class="s2">cita = obtenerCitaAleatoria</span><span class="s1">()</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Cita Inspiradora</span><span class="s1">: &quot;</span><span class="s2">, cita</span><span class="s1">[&quot;</span><span class="s2">texto</span><span class="s1">&quot;]</span><span class="s2">, </span><span class="s1">&quot; </span><span class="s2">- </span><span class="s1">&quot;</span><span class="s2">, cita</span><span class="s1">[&quot;</span><span class="s2">autor</span><span class="s1">&quot;])</span>
+
+<span class="s2">mientras verdadero</span><span class="s1">:</span>
+<span class="s2">generarCita</span><span class="s1">()</span>
+<span class="s2">si no esperarSolicitudNuevaCita</span><span class="s1">():</span>
+<span class="s2">romper</span>
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>EJERCICIO-5.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-5.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 5</span>
+
+<span class="s2">INICIO</span>
+
+<span class="s2">ESTRUCTURA DispositivoIoT</span><span class="s1">:</span>
+<span class="s2">id</span>
+<span class="s2">tipo</span>
+<span class="s2">ubicación</span>
+
+<span class="s2">FUNCIÓN inicializarDispositivos</span><span class="s1">():</span>
+<span class="s2">dispositivos = obtenerDispositivosIoT</span><span class="s1">()</span>
+<span class="s2">PARA CADA dispositivo EN dispositivos</span><span class="s1">:</span>
+<span class="s2">CONFIGURAR dispositivo SEGÚN tipo y ubicación</span>
+<span class="s2">RETORNAR dispositivos</span>
+
+<span class="s2">FUNCIÓN recolectarDatos</span><span class="s1">(</span><span class="s2">dispositivos</span><span class="s1">):</span>
+<span class="s2">DEFINIR datosComo Lista vacía</span>
+<span class="s2">PARA CADA dispositivo EN dispositivos</span><span class="s1">:</span>
+<span class="s2">INTENTAR</span><span class="s1">:</span>
+<span class="s2">LEER temperatura, humedad, calidadDelAire DE dispositivo</span>
+<span class="s2">AGREGAR {id</span><span class="s1">: </span><span class="s2">dispositivo.id, temperatura, humedad, calidadDelAire, timestamp</span><span class="s1">: </span><span class="s2">AHORA} A datos</span>
+<span class="s2">EXCEPTO error DE lectura</span><span class="s1">:</span>
+<span class="s2">REGISTRAR </span><span class="s1">&quot;</span><span class="s2">Error al leer datos de dispositivo </span><span class="s1">&quot; </span><span class="s2">+ dispositivo.id + </span><span class="s1">&quot;: &quot; </span><span class="s2">+ error</span>
+<span class="s2">RETORNAR datos</span>
+
+<span class="s2">FUNCIÓN almacenarDatos</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">):</span>
+<span class="s2">PARA CADA dato EN datos</span><span class="s1">:</span>
+<span class="s2">GUARDAR dato EN baseDeDatos</span>
+
+<span class="s2">FUNCIÓN actualizarInterfazUsuario</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">):</span>
+<span class="s2">LIMPIAR interfazUsuario</span>
+<span class="s2">PARA CADA dato EN datos</span><span class="s1">:</span>
+<span class="s2">MOSTRAR </span><span class="s1">&quot;</span><span class="s2">ID</span><span class="s1">: &quot; </span><span class="s2">+ dato.id + </span><span class="s1">&quot;</span><span class="s2">, Temp</span><span class="s1">: &quot; </span><span class="s2">+ dato.temperatura + </span><span class="s1">&quot;</span><span class="s2">, Hum</span><span class="s1">: &quot; </span><span class="s2">+ dato.humedad + </span><span class="s1">&quot;</span><span class="s2">, Calidad aire</span><span class="s1">: &quot; </span><span class="s2">+ dato.calidadDelAire + </span><span class="s1">&quot;</span><span class="s2">, Hora</span><span class="s1">: &quot; </span><span class="s2">+ dato.timestamp</span>
+
+<span class="s2">FUNCIÓN monitorearAmbiente</span><span class="s1">(</span><span class="s2">dispositivos</span><span class="s1">):</span>
+<span class="s2">MIENTRAS VERDADERO</span><span class="s1">:</span>
+<span class="s2">datos = recolectarDatos</span><span class="s1">(</span><span class="s2">dispositivos</span><span class="s1">)</span>
+<span class="s2">SI datos NO ESTÁ vacío</span><span class="s1">:</span>
+<span class="s2">almacenarDatos</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">)</span>
+<span class="s2">actualizarInterfazUsuario</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">)</span>
+<span class="s2">ESPERAR 5 minutos // Espera antes de la próxima recolección de datos para no sobrecargar los dispositivos ni la interfaz de usuario.</span>
+
+<span class="s2">FUNCIÓN obtenerDispositivosIoT</span><span class="s1">():</span>
+<span class="s2">RETORNAR listaDeDispositivosIoT</span>
+
+<span class="s2">dispositivos = inicializarDispositivos</span><span class="s1">()</span>
+<span class="s2">monitorearAmbiente</span><span class="s1">(</span><span class="s2">dispositivos</span><span class="s1">)</span>
+
+<span class="s2">FIN</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<html>
+<head>
+<title>EJERCICIO-11.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-11.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 11</span>
+
+<span class="s2">función obtenerTipoPatrón</span><span class="s1">():</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Tipo de patrón </span><span class="s1">[</span><span class="s2">rectángulo, triángulo, rombo</span><span class="s1">]:&quot;)</span>
+<span class="s2">retornar leerEntradaUsuario</span><span class="s1">()</span>
+
+<span class="s2">función obtenerTamaño</span><span class="s1">():</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Tamaño del patrón</span><span class="s1">:&quot;)</span>
+<span class="s2">retornar int</span><span class="s1">(</span><span class="s2">leerEntradaUsuario</span><span class="s1">())</span>
+
+<span class="s2">función obtenerCarácter</span><span class="s1">():</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Carácter para el patrón</span><span class="s1">:&quot;)</span>
+<span class="s2">retornar leerEntradaUsuario</span><span class="s1">()</span>
+
+<span class="s2">función generarLínea</span><span class="s1">(</span><span class="s2">tamaño, carácter, relleno</span><span class="s1">):</span>
+<span class="s2">si relleno</span><span class="s1">:</span>
+<span class="s2">retornar carácter * tamaño</span>
+<span class="s2">retornar carácter + </span><span class="s1">&quot; &quot; </span><span class="s2">* </span><span class="s1">(</span><span class="s2">tamaño - 2</span><span class="s1">) </span><span class="s2">+ carácter si tamaño </span><span class="s1">&gt; </span><span class="s2">1 sino carácter</span>
+
+<span class="s2">función crearRectángulo</span><span class="s1">(</span><span class="s2">tamaño, carácter</span><span class="s1">):</span>
+<span class="s2">para i de 1 a tamaño</span><span class="s1">:</span>
+<span class="s2">imprimir</span><span class="s1">(</span><span class="s2">generarLínea</span><span class="s1">(</span><span class="s2">tamaño, carácter, verdadero</span><span class="s1">))</span>
+
+<span class="s2">función crearTriángulo</span><span class="s1">(</span><span class="s2">tamaño, carácter</span><span class="s1">):</span>
+<span class="s2">para i de 1 a tamaño + 1</span><span class="s1">:</span>
+<span class="s2">imprimir</span><span class="s1">(</span><span class="s2">carácter * i</span><span class="s1">)</span>
+
+<span class="s2">función crearRombo</span><span class="s1">(</span><span class="s2">tamaño, carácter</span><span class="s1">):</span>
+<span class="s2">para i de 1 a tamaño</span><span class="s1">:</span>
+<span class="s2">imprimir</span><span class="s1">(&quot; &quot; </span><span class="s2">* </span><span class="s1">(</span><span class="s2">tamaño - i</span><span class="s1">) </span><span class="s2">+ carácter * </span><span class="s1">(</span><span class="s2">2 * i - 1</span><span class="s1">))</span>
+<span class="s2">para i de tamaño - 1 a 1 paso -1</span><span class="s1">:</span>
+<span class="s2">imprimir</span><span class="s1">(&quot; &quot; </span><span class="s2">* </span><span class="s1">(</span><span class="s2">tamaño - i</span><span class="s1">) </span><span class="s2">+ carácter * </span><span class="s1">(</span><span class="s2">2 * i - 1</span><span class="s1">))</span>
+
+<span class="s2">función crearPatrón</span><span class="s1">(</span><span class="s2">tipo, tamaño, carácter</span><span class="s1">):</span>
+<span class="s2">si tipo == </span><span class="s1">&quot;</span><span class="s2">rectángulo</span><span class="s1">&quot;:</span>
+<span class="s2">crearRectángulo</span><span class="s1">(</span><span class="s2">tamaño, carácter</span><span class="s1">)</span>
+<span class="s2">sino si tipo == </span><span class="s1">&quot;</span><span class="s2">triángulo</span><span class="s1">&quot;:</span>
+<span class="s2">crearTriángulo</span><span class="s1">(</span><span class="s2">tamaño, carácter</span><span class="s1">)</span>
+<span class="s2">sino si tipo == </span><span class="s1">&quot;</span><span class="s2">rombo</span><span class="s1">&quot;:</span>
+<span class="s2">crearRombo</span><span class="s1">(</span><span class="s2">tamaño, carácter</span><span class="s1">)</span>
+
+<span class="s2">tipo = obtenerTipoPatrón</span><span class="s1">()</span>
+<span class="s2">tamaño = obtenerTamaño</span><span class="s1">()</span>
+<span class="s2">carácter = obtenerCarácter</span><span class="s1">()</span>
+<span class="s2">crearPatrón</span><span class="s1">(</span><span class="s2">tipo, tamaño, carácter</span><span class="s1">)</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<html>
+<head>
+<title>EJERCICIO-1.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-1.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 1</span>
+
+<span class="s2">INICIAR Programa</span>
+
+<span class="s2">FUNCIÓN obtenerComentarios</span><span class="s1">()</span>
+<span class="s2">RETORNAR lista de comentarios</span>
+
+<span class="s2">FUNCIÓN determinarSentimiento</span><span class="s1">(</span><span class="s2">comentario</span><span class="s1">)</span>
+<span class="s2">SI comentario contiene palabras positivas</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">Positivo</span><span class="s1">&quot;</span>
+<span class="s2">SI comentario contiene palabras negativas</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">Negativo</span><span class="s1">&quot;</span>
+<span class="s2">SINO</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">Neutral</span><span class="s1">&quot;</span>
+
+<span class="s2">FUNCIÓN analizarComentarios</span><span class="s1">(</span><span class="s2">comentarios</span><span class="s1">)</span>
+<span class="s2">PARA CADA comentario EN comentarios</span>
+<span class="s2">sentimiento = determinarSentimiento</span><span class="s1">(</span><span class="s2">comentario</span><span class="s1">)</span>
+<span class="s2">IMPRIMIR </span><span class="s1">&quot;</span><span class="s2">Comentario</span><span class="s1">: &quot;</span><span class="s2">, comentario, </span><span class="s1">&quot; </span><span class="s2">- Sentimiento</span><span class="s1">: &quot;</span><span class="s2">, sentimiento</span>
+
+<span class="s2">PRINCIPAL</span>
+<span class="s2">comentarios = obtenerComentarios</span><span class="s1">()</span>
+<span class="s2">analizarComentarios</span><span class="s1">(</span><span class="s2">comentarios</span><span class="s1">)</span>
+
+<span class="s2">FIN Programa</span>
+</pre>
+</body>
+</html>

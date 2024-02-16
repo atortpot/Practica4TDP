@@ -1,0 +1,57 @@
+<html>
+<head>
+<title>EJERCICIO-3.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #56a8f5;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-3.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 3</span>
+
+<span class="s2">INICIO</span>
+
+<span class="s2">DEFINIR API_KEY COMO </span><span class="s1">&quot;</span><span class="s2">tu_api_key_aquí</span><span class="s1">&quot;</span>
+
+<span class="s2">FUNCIÓN prepararPrompt</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">):</span>
+<span class="s2">prompt = </span><span class="s1">&quot;</span><span class="s2">Identifica los principales temas, el sentimiento asociado a cada tema y sugiere tendencias emergentes basadas en el siguiente texto</span><span class="s1">: &quot; </span><span class="s2">+ datos</span>
+<span class="s2">RETORNAR prompt</span>
+
+<span class="s2">FUNCIÓN enviarSolicitudAnalisis</span><span class="s1">(</span><span class="s2">prompt</span><span class="s1">):</span>
+<span class="s2">DEFINIR url COMO </span><span class="s1">&quot;</span><span class="s3">https://api.openai.com/v1/completions</span><span class="s1">&quot;</span>
+<span class="s2">DEFINIR headers COMO Diccionario con </span><span class="s1">&quot;</span><span class="s2">Content-Type</span><span class="s1">&quot; </span><span class="s2">-</span><span class="s1">&gt; &quot;</span><span class="s2">application/json</span><span class="s1">&quot; </span><span class="s2">y </span><span class="s1">&quot;</span><span class="s2">Authorization</span><span class="s1">&quot; </span><span class="s2">-</span><span class="s1">&gt; &quot;</span><span class="s2">Bearer </span><span class="s1">&quot; </span><span class="s2">+ API_KEY</span>
+<span class="s2">DEFINIR data COMO Diccionario con configuraciones para la solicitud </span><span class="s1">(</span><span class="s2">modelo, prompt, temperatura, max_tokens, top_p, frequency_penalty, presence_penalty</span><span class="s1">)</span>
+
+    <span class="s4">HACER solicitud POST a url CON data y headers</span>
+    <span class="s4">SI respuesta es exitosa:</span>
+      <span class="s4">RETORNAR texto de la primera opción de la respuesta</span>
+    <span class="s4">SINO:</span>
+      <span class="s4">LANZAR excepción &quot;Error en la solicitud a la API&quot;</span>
+
+<span class="s2">FUNCIÓN procesarRespuesta</span><span class="s1">(</span><span class="s2">respuesta</span><span class="s1">):</span>
+<span class="s2">IMPRIMIR </span><span class="s1">&quot;</span><span class="s2">Respuesta de la API</span><span class="s1">:&quot; </span><span class="s2">+ respuesta</span>
+
+<span class="s2">FUNCIÓN analizarTendencias</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">):</span>
+<span class="s2">analisisPrompt = prepararPrompt</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">)</span>
+<span class="s2">respuesta = enviarSolicitudAnalisis</span><span class="s1">(</span><span class="s2">analisisPrompt</span><span class="s1">)</span>
+<span class="s2">procesarRespuesta</span><span class="s1">(</span><span class="s2">respuesta</span><span class="s1">)</span>
+
+<span class="s2">FUNCIÓN obtenerDatosRedesSociales</span><span class="s1">():</span>
+<span class="s2">RETORNAR </span><span class="s1">&quot;</span><span class="s2">Aquí el texto recogido de redes sociales para analizar</span><span class="s1">&quot;</span>
+
+<span class="s2">datos = obtenerDatosRedesSociales</span><span class="s1">()</span>
+<span class="s2">analizarTendencias</span><span class="s1">(</span><span class="s2">datos</span><span class="s1">)</span>
+
+<span class="s2">FIN</span>
+</pre>
+</body>
+</html>

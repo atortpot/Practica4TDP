@@ -1,0 +1,53 @@
+<html>
+<head>
+<title>EJERCICIO-10.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-10.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 10</span>
+
+<span class="s2">función obtenerImagenUsuario</span><span class="s1">():</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Por favor, introduce el camino hacia la imagen</span><span class="s1">:&quot;)</span>
+<span class="s2">caminoImagen = leerEntradaUsuario</span><span class="s1">()</span>
+<span class="s2">retornar cargarImagenDesdeArchivo</span><span class="s1">(</span><span class="s2">caminoImagen</span><span class="s1">)</span>
+
+<span class="s2">función obtenerResolución</span><span class="s1">():</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Introduce la resolución deseada </span><span class="s1">(</span><span class="s2">baja, media, alta</span><span class="s1">):&quot;)</span>
+<span class="s2">resolución = leerEntradaUsuario</span><span class="s1">()</span>
+<span class="s2">retornar convertirResoluciónATamaño</span><span class="s1">(</span><span class="s2">resolución</span><span class="s1">)</span>
+
+<span class="s2">función obtenerCaracteres</span><span class="s1">():</span>
+<span class="s2">imprimir</span><span class="s1">(&quot;</span><span class="s2">Introduce los caracteres para el arte ASCII </span><span class="s1">(</span><span class="s2">dejar vacío para usar valores predeterminados</span><span class="s1">):&quot;)</span>
+<span class="s2">caracteres = leerEntradaUsuario</span><span class="s1">()</span>
+<span class="s2">si caracteres == </span><span class="s1">&quot;&quot;:</span>
+<span class="s2">caracteres = </span><span class="s1">&quot;</span><span class="s2">@#%</span><span class="s1">*</span><span class="s2">+=-</span><span class="s1">:</span><span class="s2">. </span><span class="s1">&quot;</span>
+<span class="s2">retornar caracteres</span>
+
+<span class="s2">función convertirAASCII</span><span class="s1">(</span><span class="s2">imagen, resolución, caracteres</span><span class="s1">):</span>
+<span class="s2">arteASCII = algoritmoIAConvertir</span><span class="s1">(</span><span class="s2">imagen, resolución, caracteres</span><span class="s1">)</span>
+<span class="s2">retornar arteASCII</span>
+
+<span class="s2">función mostrarArte</span><span class="s1">(</span><span class="s2">arteASCII</span><span class="s1">):</span>
+<span class="s2">imprimir</span><span class="s1">(</span><span class="s2">arteASCII</span><span class="s1">)</span>
+
+<span class="s2">función crearArteASCII</span><span class="s1">(</span><span class="s2">imagen, resolución, caracteres</span><span class="s1">):</span>
+<span class="s2">arte = convertirAASCII</span><span class="s1">(</span><span class="s2">imagen, resolución, caracteres</span><span class="s1">)</span>
+<span class="s2">mostrarArte</span><span class="s1">(</span><span class="s2">arte</span><span class="s1">)</span>
+
+<span class="s2">imagen = obtenerImagenUsuario</span><span class="s1">()</span>
+<span class="s2">resolución = obtenerResolución</span><span class="s1">()</span>
+<span class="s2">caracteres = obtenerCaracteres</span><span class="s1">()</span>
+<span class="s2">crearArteASCII</span><span class="s1">(</span><span class="s2">imagen, resolución, caracteres</span><span class="s1">)</span>
+</pre>
+</body>
+</html>

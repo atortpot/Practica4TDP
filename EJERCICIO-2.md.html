@@ -1,0 +1,82 @@
+<html>
+<head>
+<title>EJERCICIO-2.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-2.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 2</span>
+
+<span class="s2">INICIAR Programa</span>
+
+<span class="s2">CLASE Equipo</span>
+<span class="s2">VARIABLES privadas</span><span class="s1">: </span><span class="s2">nombre, tipo, capacidad</span>
+
+    <span class="s3">CONSTRUCTOR(nombre, tipo, capacidad)</span>
+        <span class="s3">INICIALIZAR nombre, tipo, capacidad</span>
+
+    <span class="s3">METODO toString()</span>
+        <span class="s3">RETORNAR cadena con nombre, tipo, capacidad</span>
+
+    <span class="s3">METODO obtenerNombre()</span>
+        <span class="s3">RETORNAR nombre</span>
+
+    <span class="s3">METODO obtenerCapacidad()</span>
+        <span class="s3">RETORNAR capacidad</span>
+
+<span class="s2">FIN CLASE</span>
+
+<span class="s2">CLASE Red</span>
+<span class="s2">VARIABLE privada</span><span class="s1">: </span><span class="s2">lista de equipos</span>
+
+    <span class="s3">CONSTRUCTOR()</span>
+        <span class="s3">INICIALIZAR lista de equipos</span>
+
+    <span class="s3">METODO registrarEquipo(equipo)</span>
+        <span class="s3">AÑADIR equipo a lista</span>
+        <span class="s3">IMPRIMIR equipo registrado</span>
+
+    <span class="s3">METODO listarEquipos()</span>
+        <span class="s3">SI lista está vacía</span>
+            <span class="s3">IMPRIMIR &quot;La red no tiene equipos.&quot;</span>
+        <span class="s3">SINO</span>
+            <span class="s3">PARA CADA equipo EN lista</span>
+                <span class="s3">IMPRIMIR equipo</span>
+
+    <span class="s3">METODO simularCarga()</span>
+        <span class="s3">SI lista está vacía</span>
+            <span class="s3">IMPRIMIR &quot;No hay equipos para simular carga.&quot;</span>
+        <span class="s3">SINO</span>
+            <span class="s3">PARA CADA equipo EN lista</span>
+                <span class="s3">GENERAR carga aleatoria</span>
+                <span class="s3">IMPRIMIR carga y verificar capacidad</span>
+
+<span class="s2">FIN CLASE</span>
+
+<span class="s2">CLASE SimuladorDeRed</span>
+<span class="s2">METODO main</span><span class="s1">()</span>
+<span class="s2">CREAR instancia de Red</span>
+<span class="s2">REPETIR</span>
+<span class="s2">SOLICITAR al usuario elegir una acción</span>
+<span class="s2">SEGUN acción elegida</span>
+<span class="s2">CASO 1</span><span class="s1">: </span><span class="s2">Registrar equipo</span>
+<span class="s2">CASO 2</span><span class="s1">: </span><span class="s2">Listar equipos</span>
+<span class="s2">CASO 3</span><span class="s1">: </span><span class="s2">Simular carga</span>
+<span class="s2">CASO 4</span><span class="s1">: </span><span class="s2">Salir</span>
+<span class="s2">HASTA que acción sea Salir</span>
+<span class="s2">FIN CLASE</span>
+
+<span class="s2">FIN Programa</span>
+</pre>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>EJERCICIO-6.md</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+EJERCICIO-6.md</font>
+</center></td></tr></table>
+<pre><span class="s0"># </span><span class="s2">EJERCICIO 6</span>
+
+<span class="s2">INICIO</span>
+
+<span class="s2">FUNCIÓN esFraudulenta</span><span class="s1">(</span><span class="s2">transacción, modelo, contextoUsuario</span><span class="s1">):</span>
+<span class="s2">ANALIZAR transacción UTILIZANDO modelo CON contextoUsuario</span>
+<span class="s2">SI la transacción es identificada como fraudulenta CON alta confianza</span><span class="s1">:</span>
+<span class="s2">RETORNAR VERDADERO</span>
+<span class="s2">SINO</span><span class="s1">:</span>
+<span class="s2">RETORNAR FALSO</span>
+
+<span class="s2">FUNCIÓN obtenerModeloDeFraude</span><span class="s1">():</span>
+<span class="s2">CARGAR modeloDesde AlmacenamientoPersistente</span>
+<span class="s2">RETORNAR modelo</span>
+
+<span class="s2">FUNCIÓN obtenerContextoUsuario</span><span class="s1">(</span><span class="s2">transacción</span><span class="s1">):</span>
+<span class="s2">RETORNAR contextoDelUsuarioDesdeBaseDeDatos</span><span class="s1">(</span><span class="s2">transacción.usuarioID</span><span class="s1">)</span>
+
+<span class="s2">FUNCIÓN actualizarModeloConRetroalimentación</span><span class="s1">(</span><span class="s2">transacción, esFraude</span><span class="s1">):</span>
+<span class="s2">ACTUALIZAR modelo CON {transacción, esFraude}</span>
+<span class="s2">GUARDAR modelo EN AlmacenamientoPersistente</span>
+
+<span class="s2">FUNCIÓN notificarUsuario</span><span class="s1">(</span><span class="s2">transacción</span><span class="s1">):</span>
+<span class="s2">ENVIAR notificaciónAUsuario</span><span class="s1">(</span><span class="s2">transacción.usuarioID, transacción.id</span><span class="s1">)</span>
+
+<span class="s2">FUNCIÓN integrarFuentesDeDatosExternas</span><span class="s1">(</span><span class="s2">transacción</span><span class="s1">):</span>
+<span class="s2">datosExternos = OBTENER datosParaTransacciónDesdeFuentesExternas</span><span class="s1">(</span><span class="s2">transacción.id</span><span class="s1">)</span>
+<span class="s2">RETORNAR fusionarDatos</span><span class="s1">(</span><span class="s2">transacción, datosExternos</span><span class="s1">)</span>
+
+<span class="s2">FUNCIÓN detectarFraude</span><span class="s1">(</span><span class="s2">transacciones</span><span class="s1">):</span>
+<span class="s2">modelo = obtenerModeloDeFraude</span><span class="s1">()</span>
+<span class="s2">PARA CADA transacción EN transacciones</span><span class="s1">:</span>
+<span class="s2">transacción = integrarFuentesDeDatosExternas</span><span class="s1">(</span><span class="s2">transacción</span><span class="s1">)</span>
+<span class="s2">contextoUsuario = obtenerContextoUsuario</span><span class="s1">(</span><span class="s2">transacción</span><span class="s1">)</span>
+<span class="s2">SI esFraudulenta</span><span class="s1">(</span><span class="s2">transacción, modelo, contextoUsuario</span><span class="s1">):</span>
+<span class="s2">marcarComoFraudulenta</span><span class="s1">(</span><span class="s2">transacción</span><span class="s1">)</span>
+<span class="s2">notificarUsuario</span><span class="s1">(</span><span class="s2">transacción</span><span class="s1">)</span>
+<span class="s2">actualizarModeloConRetroalimentación</span><span class="s1">(</span><span class="s2">transacción, VERDADERO</span><span class="s1">)</span>
+<span class="s2">SINO</span><span class="s1">:</span>
+<span class="s2">actualizarModeloConRetroalimentación</span><span class="s1">(</span><span class="s2">transacción, FALSO</span><span class="s1">)</span>
+
+<span class="s2">FUNCIÓN analizarTransacciones</span><span class="s1">():</span>
+<span class="s2">transacciones = obtenerTransacciones</span><span class="s1">()</span>
+<span class="s2">detectarFraude</span><span class="s1">(</span><span class="s2">transacciones</span><span class="s1">)</span>
+
+<span class="s2">analizarTransacciones</span><span class="s1">()</span>
+
+<span class="s2">FIN</span>
+</pre>
+</body>
+</html>
